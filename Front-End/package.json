@@ -1,0 +1,163 @@
+{
+  "name": "vuetcfm",
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.ts$": "<rootDir>/node_modules/ts-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/src/components/*.{vue}",
+      "<rootDir>/src/page/*.{vue}",
+      "!*/node_modules/*"
+    ],
+    "coverageDirectory": "test/coverage",
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "testMatch": [
+      "<rootDir>/test/specs/**/*.spec.(js)"
+    ],
+    "testURL": "http://localhost/",
+    "automock": false,
+    "setupFiles": [
+      "<rootDir>/setupJest.ts"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "Testing <testing@yahoo.com>",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "node build/build.js",
+    "unit": "jest --coverage --no-cache"
+  },
+  "dependencies": {
+    "axios": "^0.18.1",
+    "moment": "^2.24.0",
+    "vue": "^2.5.2",
+    "vue-multiselect": "^2.1.6",
+    "vue-router": "^3.0.1",
+    "vue-sse": "^1.0.2",
+    "vuex": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@types/jest": "^24.0.17",
+    "@vue/test-utils": "^1.0.0-beta.24",
+    "autoprefixer": "^7.1.2",
+    "axios-mock-adapter": "^1.17.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-jest": "^22.4.4",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.26.0",
+    "chalk": "^2.0.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^1.1.4",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^23.6.0",
+    "jest-fetch-mock": "^2.1.2",
+    "jest-mock-axios": "^3.1.0",
+    "jest-transform-stub": "^2.0.0",
+    "moxios": "^0.4.0",
+    "node-notifier": "^5.1.2",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.2.0",
+    "portfinder": "^1.0.13",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.8",
+    "postcss-url": "^7.2.1",
+    "rimraf": "^2.6.0",
+    "semver": "^5.3.0",
+    "shelljs": "^0.7.6",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3",
+    "uglifyjs-webpack-plugin": "^1.1.1",
+    "url-loader": "^0.5.8",
+    "vue-jest": "^3.0.4",
+    "vue-loader": "^13.3.0",
+    "vue-responsive-image": "^0.1.2",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.5.2",
+    "vue-test-utils": "^1.0.0-beta.11",
+    "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 2 versions",
+              "not ie <= 8",
+              "Chrome >= 41"
+            ]
+          },
+          "modules": false
+        }
+      ],
+      "stage-2"
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "dynamic-import-node"
+        ],
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "> 1%",
+                  "last 2 versions",
+                  "not ie <= 8",
+                  "Chrome >= 41"
+                ]
+              }
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
